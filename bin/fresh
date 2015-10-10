@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -x
 
 # Predownload variables
 FRESH_DIR="${HOME}/.fresh"
