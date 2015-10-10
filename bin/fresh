@@ -23,7 +23,6 @@ source ./lib/utils
 source ./lib/vars
 source ./lib/taps
 source ./lib/brew
-source ./lib/npm
 source ./lib/casks
 source ./lib/links
 source ./lib/home
@@ -88,7 +87,6 @@ run_taps
 # Update packages
 title_info "Updating packages"
 run_brew
-run_npm
 
 # Ruby Version Manager
 if ! type_exists 'rvm'; then

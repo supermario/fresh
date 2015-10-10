@@ -5,21 +5,8 @@
 # -----------------
 git config --global user.name "${USER_NAME}"
 git config --global user.email "${USER_EMAIL}"
-git config --global core.editor "subl -w"
 
 e_success "Setup Git"
-
-#
-# Add Source Code Pro to fonts 
-# -----------------
-if [[ ! -f $HOME/Library/Fonts/SourceCodePro-Regular.otf ]]; then
-  wget -q http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip
-  unzip -o SourceCodePro_FontsOnly-1.017.zip > /dev/null
-  cp SourceCodePro_FontsOnly-1.017/OTF/*.otf /Library/Fonts
-  rm -r SourceCodePro_FontsOnly-1.017 && rm SourceCodePro_FontsOnly-1.017.zip
-fi
-
-e_success "Installed Source Code Pro font"
 
 #
 # iTerm
@@ -53,7 +40,7 @@ e_success "Setup iTerm"
 
 #
 # Sublime Text 2
-# ----------------- 
+# -----------------
 open -a "Sublime Text 2" && sleep 1
 killall "Sublime Text 2"
 # Symlink executable for use in terminal
@@ -96,18 +83,4 @@ e_success "Setup Sublime Text 2"
 
 e_success "Setup iStat Menus"
 
-#
-# HipChat
-# -----------------
-/usr/bin/defaults write com.hipchat.HipChat 'signInEmail' -string "${USER_EMAIL}"
-/usr/bin/defaults write com.hipchat.HipChat 'account_email' -string "${USER_EMAIL}"
 
-e_success "Setup HipChat"
-
-#
-# GitBox
-# -----------------
-/usr/bin/defaults write com.oleganza.gitbox.plist 'WelcomeWasDisplayed' -bool true
-/usr/bin/defaults write com.oleganza.gitbox.plist 'diffTool' -string 'Kaleidoscope'
-
-e_success "Setup GitBox"

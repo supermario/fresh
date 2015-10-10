@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # User editable
-OSX_COMPUTER_NAME="Ben's Lappy"
-OSX_HOST_NAME="laptop-benwhite"
-OSX_HOME_DIR="/Volumes/Home/Users/benwhite"
-USER_NAME="Ben White"
-USER_EMAIL="hello@bemm.com.au"
-GIT_REMOTE="git@github.com:d3v1an7/fresh.git"
+OSX_COMPUTER_NAME="calculon"
+OSX_HOST_NAME="calculon"
+OSX_HOME_DIR="/Volumes/Home/Users/mario"
+USER_NAME="Mario Rogic"
+USER_EMAIL="hello@mario.net.au"
+GIT_REMOTE="git@github.com:supermario/fresh.git"
 
 # Hard coded
 COLOUR_PASS=$(tput setaf 2)
@@ -16,61 +16,70 @@ COLOUR_ERROR=$(tput setaf 1)
 COLOUR_RESET=$(tput sgr0)
 
 desired_brew_formulae=(
-  'coreutils' # GNU core utilities (those that come with OS X are outdated)
-  'node'
-  'git'
+  # System
+  'apple-gcc42'
+  'coreutils'
+  'modules'
+
+  # Tooling
   'ack'
-  'awscli'
   'bash'
   'bash-completion'
-  'brew-cask'
   'curl'
-  # PHP/Composer failing on Xcode 6 beta
-  #'php55-intl' # Composer 
-  #’josegonzalez/php/composer' # Composer
-  'libevent'
-  'openssl'
-  'packer'
+  'direnv'
+  'findutils'
+  'git'
+  'grep'
+  'htop-osx'
+  'hub'
+  'lunchy'
+  'ncdu' # shell based disk usage analyzer
+  'nmap'
+  'readline'
+  'tmux'
+  'tree'
   'vim'
   'wget'
+
+  # Containers
+  'docker'
+  'boot2docker'
+
+  # Libs
+  'ffmpeg'
+  'imagemagick'
+  'libxml2'
+  'libyaml'
+
+  # Langs
+  'rvm'
+  'nvm'
+
+  # Apps
+  'brew-cask'
+  'memcached'
+  'phantomjs'
+  'postgresql'
+  'redis'
+  'sqlite'
 )
 
 desired_casks=(
-  'adium'
-  'adobe-creative-cloud' # Manual install
-  'atom'
-  'cakebrew'
-  'cloud'
-  'dashlane'
   'dropbox'
   'firefox'
-  'gas-mask'
   'google-chrome'
   'heroku-toolbelt'
-  'hipchat'
-  'ios7-screensaver'
   'istat-menus'
   'iterm2'
-  'kaleidoscope'
-  'mpeg-streamclip'
-  'origin'
-  'prefs-editor'
-  'sequel-pro'
+  'quicklook-json'
   'skype'
-  'sonos'
+  'slack'
   'spotify'
-  'steam'
   'sublime-text'
-  'teamviewer' # Manual install
-  'utorrent' # Manual install
-  'virtualbox' # Manual install
-  'vagrant'
-  'vagrant-manager'
+  'virtualbox'
 )
 
 desired_taps=(
-  'caskroom/cask' # Casks
-  'homebrew/binary' # Packer
-  'homebrew/versions' # Composer
-  'josegonzalez/homebrew-php' # Composer
+  'caskroom/cask'
+  'homebrew/versions'
 )

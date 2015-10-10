@@ -23,7 +23,6 @@ e_success "System Preferences/Personal/General"
 # -----------------
 
 /usr/bin/defaults -currentHost write com.apple.screensaver 'idleTime' -int 180
-/usr/bin/defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName -string "iOS 7 lockscreen by bodysoulspirit.qtz" path -string "$HOME/Library/Screen Savers/iOS 7 lockscreen by bodysoulspirit.qtz" type -int 0
 
 e_success "System Preferences/Personal/Desktop & Screen Saver"
 
@@ -66,19 +65,19 @@ e_success "System Preferences/Hardware/Displays"
 # -----------------
 
 # Battery
-/usr/bin/sudo /usr/bin/pmset -b sleep 10 # Computer sleep
-/usr/bin/sudo /usr/bin/pmset -b displaysleep 5 # Display sleep
-/usr/bin/sudo /usr/bin/pmset -b disksleep 10 # HDD sleep
-/usr/bin/sudo /usr/bin/pmset -b lessbright 1 # Dim display
-/usr/bin/sudo /usr/bin/pmset -b halfdim 0 # Reduce brightness before sleep
+/usr/bin/sudo /usr/bin/pmset -b sleep        10 # Computer sleep
+/usr/bin/sudo /usr/bin/pmset -b displaysleep 5  # Display sleep
+/usr/bin/sudo /usr/bin/pmset -b disksleep    10 # HDD sleep
+/usr/bin/sudo /usr/bin/pmset -b lessbright   1  # Dim display
+/usr/bin/sudo /usr/bin/pmset -b halfdim      0  # Reduce brightness before sleep
 
 # Power Adapter
-/usr/bin/sudo /usr/bin/pmset -c sleep 0 # Computer sleep
+/usr/bin/sudo /usr/bin/pmset -c sleep        0  # Computer sleep
 /usr/bin/sudo /usr/bin/pmset -c displaysleep 10 # Display sleep
-/usr/bin/sudo /usr/bin/pmset -c disksleep 10 # HDD sleep
-/usr/bin/sudo /usr/bin/pmset -c womp 1 # Wake for network access
-/usr/bin/sudo /usr/bin/pmset -c halfdim 0 # Dim display
-/usr/bin/sudo /usr/bin/pmset -c autorestart 1 # Auto restart (Power failure)
+/usr/bin/sudo /usr/bin/pmset -c disksleep    10 # HDD sleep
+/usr/bin/sudo /usr/bin/pmset -c womp         1  # Wake for network access
+/usr/bin/sudo /usr/bin/pmset -c halfdim      0  # Dim display
+/usr/bin/sudo /usr/bin/pmset -c autorestart  1  # Auto restart (Power failure)
 
 e_success "System Preferences/Hardware/Energy Saver"
 
@@ -96,7 +95,7 @@ e_success "System Preferences/Hardware/Mouse"
 # -----------------
 
 # Disable 'natural' scrolling
-/usr/bin/defaults write -g 'com.apple.swipescrolldirection' -bool false 
+/usr/bin/defaults write -g 'com.apple.swipescrolldirection' -bool false
 
 # Tap to click (for this user and for the login screen)
 /usr/bin/defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad 'Clicking' -bool true
@@ -116,7 +115,7 @@ sudo scutil --set HostName "$OSX_HOST_NAME"
 
 # Enable file sharing
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
+sudo launchctl load   -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
 
 # Set shell -> to do one day
 # if [ ! $SHELL = '/bin/zsh' ]; then
@@ -192,17 +191,16 @@ e_success "System Preferences/System/Date & Time"
   "/System/Library/CoreServices/Menu Extras/Clock.menu" \
   "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
   "/System/Library/CoreServices/Menu Extras/User.menu" \
-  "/System/Library/CoreServices/Menu Extras/Volume.menu"
-  
+
 # Menubar show (order: left to right)
 /usr/bin/defaults write com.apple.systemuiserver 'menuExtras' -array \
-  "/Library/Application Support/iStat Menus 4/extras/iStatMenusTemps.menu" \
-  "/Library/Application Support/iStat Menus 4/extras/iStatMenusMemory.menu" \
-  "/Library/Application Support/iStat Menus 4/extras/iStatMenusCPU.menu" \
+  "/Library/Application Support/iStat Menus 5/extras/iStatMenusTemps.menu" \
+  "/Library/Application Support/iStat Menus 5/extras/iStatMenusMemory.menu" \
+  "/Library/Application Support/iStat Menus 5/extras/iStatMenusCPU.menu" \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-  "/Library/Application Support/iStat Menus 4/extras/iStatMenusDateAndTimes.menu"
+  "/Library/Application Support/iStat Menus 5/extras/iStatMenusDateAndTimes.menu"
 
 e_success "Misc hidden preferences"
 
@@ -288,8 +286,7 @@ e_success "Finder preferences"
 /usr/bin/defaults write com.apple.dock 'persistent-apps' -array ""
 /usr/bin/defaults write com.apple.dock 'persistent-others' -array ""
 /usr/bin/defaults write com.apple.dock 'persistent-apps' -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$HOME/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+/usr/bin/defaults write com.apple.dock 'persistent-apps' -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$HOME/Applications/iTerm 2.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 /usr/bin/defaults write com.apple.dock 'persistent-apps' -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$HOME/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-/usr/bin/defaults write com.apple.dock 'persistent-apps' -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$HOME/Applications/HipChat.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-/usr/bin/defaults write com.apple.dock 'persistent-apps' -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$HOME/Applications/Sublime Text 2.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
 e_success "Reset dock"
