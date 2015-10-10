@@ -2,7 +2,7 @@
 
 # Predownload variables
 FRESH_DIR="${HOME}/.fresh"
-FRESH_TAR="https://github.com/d3v1an7/fresh/tarball/master"
+FRESH_TAR="https://github.com/supermario/fresh/tarball/supermario"
 
 # If missing, download and extract the Fresh repository
 if [[ ! -d ${FRESH_DIR} ]]; then
