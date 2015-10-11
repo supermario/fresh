@@ -93,6 +93,11 @@ run_taps
 title_info "Updating packages"
 run_brew
 
+# Ruby Version Manager
+if ! type_exists 'rvm'; then
+  \curl -sSL https://get.rvm.io | bash -s stable
+fi
+
 # Install apps
 title_info "Installing apps"
 run_casks
