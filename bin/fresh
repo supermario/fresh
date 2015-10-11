@@ -48,6 +48,9 @@ sudo -v
 # Sudo keep-alive credit: https://gist.github.com/cowboy/3118588
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md
+chown -R $(whoami):admin /usr/local
+
 # Ensure user varaibles are correct before kicking off
 output_variables
 validate_variables
