@@ -89,7 +89,7 @@ formula_exists() {
 }
 
 tap_exists() {
-  if $(brew tap $1 >/dev/null 2>&1); then
+  if $(brew tap | grep "$1" >/dev/null 2>&1); then
     e_success "$1 already installed"
     return 0
   fi
