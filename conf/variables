@@ -54,6 +54,7 @@ desired_brew_formulae=(
   # Langs
   'rvm'
   'nvm'
+  'haskell-stack'
 
   # Apps
   'brew-cask'
@@ -77,9 +78,13 @@ desired_casks=(
   'spotify'
   'sublime-text'
   'virtualbox'
+  'transmission'
+  'licecap' # Gif screencasts
+  'private-internet-access'
 )
 
 desired_taps=(
   'caskroom/cask'
   'homebrew/versions'
+  'homebrew/dupes'
 )
